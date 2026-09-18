@@ -22,19 +22,21 @@ def ver_metas():
         estado = "Cumplida" if meta["cumplida"] else "Pendiente"
         print(f"{i}. {meta['descripcion']} - {estado}")
 
-
+    
 def contar_cumplidas():
     total = sum(1 for m in metas if m["cumplida"])
     print(f"Metas cumplidas: {total} de {len(metas)}")
 
+def contar_metas():
+    print(f"Total de metas: {len(metas)}")
 
 def mostrar_menu():
     print("\n=== Gestor de Metas Personales ===")
     print("Organiza tus objetivos y sigue tu progreso")
     print("1. Agregar meta")
     print("2. Ver metas")
-    print("3. Salir")
-
+    print("3. Contar metas")
+    print("4. Salir")
 
 continuar = True
 
@@ -48,6 +50,8 @@ while continuar:
     elif opcion == "2":
         ver_metas()
     elif opcion == "3":
+        contar_metas()
+    elif opcion == "4":
         print("Hasta luego!")
         continuar = False
     else:
